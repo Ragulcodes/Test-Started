@@ -1,0 +1,61 @@
+/* Container for both progress bar and timer */
+.progress-timer-container {
+  display: flex;
+  align-items: flex-start; /* Align items at the start to match the header height */
+  width: 100%;
+  height: 100%; /* Full height of the wrapper */
+  padding-left: 0; /* Removed padding-left for fitting */
+  box-sizing: border-box;
+}
+
+/* Timer container for correct alignment */
+.timer-container {
+  display: flex;
+  align-items: center;
+  margin-right: 20px; /* Space between timer and progress container */
+}
+
+/* Progress container aligned with the design */
+.progress-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px; /* Reduced gap for a more compact look */
+  font-family: 'Spline Sans Mono';
+  width: calc(100% - 40px); /* Adjust width based on available space */
+  height: 100%; /* Full height of the wrapper */
+}
+
+/* Progress text ("Progress" and percentage) */
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Spline Sans Mono';
+  color: #F5F7F8;
+  font-size: 14px;
+}
+
+/* Header title styling */
+.Progress-title {
+  color: #F5F7F8;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+/* Progress bar container */
+.progress-bar {
+  height: 8px; /* Height of the progress bar */
+  background-color: #313131;
+  border-radius: 50px;
+  overflow: hidden;
+  font-family: 'Spline Sans Mono';
+}
+
+/* Progress fill */
+.progress {
+  height: 100%;
+  background-color: #7367f0;
+  border-radius: 50px;
+  transition: width 0.3s ease; /* Smooth transition effect */
+}

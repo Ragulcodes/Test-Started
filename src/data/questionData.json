@@ -1,0 +1,40 @@
+[
+  {
+    "question": "In JavaScript, how can you handle asynchronous operations while ensuring that errors are caught and managed appropriately?",
+    "options": [
+        "Using Promises and the `.catch()` method to handle errors after the promise has been rejected",
+        "Utilizing the `setTimeout` function to delay execution and catch errors using traditional `try/catch` blocks",
+        "Employing async/await syntax with `try/catch` blocks to manage errors in asynchronous code",
+        "Leveraging callback functions with explicit error handling in each callback to address potential issues"
+    ]
+},
+
+  {
+      "question": "What is Node.js?",
+      "options": [
+          "A web browser",
+          "A JavaScript runtime",
+          "A database",
+          "A programming language"
+      ]
+  },
+  {
+    "question": "What is Node.js?",
+    "options": [
+        "A web browser",
+        "A JavaScript runtime",
+        "A database",
+        "A programming language"
+    ]
+},
+{
+    "question": "What is Node.js?",
+    "options": [
+        "A web browser",
+        "A JavaScript runtime",
+        "A database",
+        "A programming language"
+    ]
+}
+  
+]

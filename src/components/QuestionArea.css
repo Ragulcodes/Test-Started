@@ -1,0 +1,298 @@
+.question-area {
+  display: flex;
+  flex-direction: column;
+  width:65%;
+  margin: 0 auto;
+  border: 1px solid #333;
+  padding: 24px;
+  background: #111111 ;
+}
+
+.question-title {
+  color: var(--Color-White-Secondary, #B5B7B8);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.question-text {
+  user-select: none;
+  color: var(--Color-White-Primary, #F5F7F8);
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: var(--text-large-letter-spacing, 0px);
+  margin-bottom: 24px;
+}
+
+.line {
+  border-bottom: 1px solid #313131;
+}
+
+.options-list {
+  list-style: none;
+  padding: 0;
+  user-select: none;
+}
+
+.option-item {
+  position: relative; /* Added for absolute positioning of input */
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  background-color: #282828;
+  padding: 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: 1px solid var(--Color-White-Border-Storke, rgba(255, 255, 255, 0.15));
+  background: var(--Color-Black-Secondary, #222);
+}
+
+/* Updated input style */
+.option-item input[type="radio"] {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  width: 100%; /* Make input cover the entire option item */
+  height: 100%;
+  cursor: pointer;
+  z-index: 1;
+}
+
+/* Circle and text styling */
+.option-item label {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding-left: 40px; /* Adjust for circle width */
+  color: #F5F7F8;
+}
+
+/* Circle styling for the unselected state */
+.option-item .circle {
+  position: absolute;
+  left: 10px;
+  height: 24px;
+  width: 24px;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 2px solid #888; /* Light gray border for the unselected state */
+  transition: border-color 0.25s linear, background-color 0.25s linear;
+}
+
+/* Inner circle for the selected state */
+.option-item .circle::before {
+  content: '';
+  display: block;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 14px; /* Smaller inner circle */
+  width: 14px;
+  background: transparent; /* Transparent when unselected */
+  border-radius: 50%;
+  transition: background-color 0.25s linear;
+}
+
+/* Selected state styling */
+.option-item.selected .circle {
+  border-color: #00B285; /* Green border for the selected state */
+  background-color: transparent; /* Keep the background transparent */
+}
+
+/* Inner circle turns green when selected */
+.option-item.selected .circle::before {
+  background-color: #00B285; /* Green inner circle when selected */
+}
+
+/* Hover effect to indicate interactivity */
+.option-item input[type="radio"]:hover + label .circle {
+  border-color: #00B285; /* Green border on hover */
+}
+
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.see-explanation {
+  color: #888;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.buttons {
+  display: flex;
+}
+
+.nav-button.next {
+  border-radius: 100px;
+  width: 104px;
+  padding: 10px 20px;
+  border: none;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: 10px;
+  background-color: #7367f0; /* Blue color */
+  transition: background-color 0.3s ease;
+}
+
+.nav-button.back {
+  border-radius: 100px;
+  width: 104px;
+  padding: 10px 20px;
+  border: none;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #333; /* Dark color */
+  transition: background-color 0.3s ease;
+}
+
+.nav-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.nav-button.back:hover:not(:disabled) {
+  border: 1px solid #888;
+}
+
+.nav-button.next:hover:not(:disabled) {
+  border: 1px solid #888;
+}
+
+/* Styles for the dialog overlay and box */
+/* Dialog overlay to blur background */
+/* Dialog overlay to blur and disable interaction with the background */
+.dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(2px);
+  z-index: 9999;
+}
+
+.dialog-box {
+  background: #222;
+  flex-direction: column;
+  align-content: stretch;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+  border: 2px solid #313131;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  display: flex;
+width: 507px;
+height: 275px;
+padding: 20px 24px;
+/* justify-content: flex-end;
+align-items: flex-start; */
+gap: 10px;
+}
+
+.dialog-box .close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  color: #fff;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.dialog-box .close-button:hover {
+  opacity: 1;
+}
+
+.dialog-box .prompt-message {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #FFF;
+text-align: center;
+
+/* Text/Text-Large */
+font-family: "Spline Sans Mono";
+font-size: 20px;
+font-style: normal;
+font-weight: 500;
+line-height: 24px; /* 120% */
+letter-spacing: var(--text-large-letter-spacing, 0px);
+}
+
+.dialog-box .prompt-message span {
+  color: #7367f0;
+  font-weight: bold;
+}
+
+.dialog-box input[type="text"] {
+  width: calc(100% - 40px);
+  margin-bottom: 20px;
+  background: transparent;
+  border: 1px solid #313131;
+  border-radius: 4px;
+  color: white;
+  outline: none;
+  color: #FFF;
+
+display: flex;
+
+padding: 16px 11px;
+/* Text/Text-Small */
+font-family: Spline Sans Mono;
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: 16px; /* 114.286% */
+letter-spacing: var(--text-small-letter-spacing, 0px);
+}
+
+.dialog-box input[type="text"]:focus {
+  border-color: #7367f0;
+}
+
+.dialog-box .submit-button {
+  font-family: Spline Sans Mono;
+  
+  background: #7367f0;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+width: 114px;
+height: 48px;
+padding: 16px 25px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+flex-shrink: 0;
+}
+
+.dialog-box .submit-button:hover {
+  background-color: #5e5bff;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+}

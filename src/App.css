@@ -1,38 +1,50 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+/* App container - maintaining a dark theme */
+.app-container {
+  background-color: #111111;
   min-height: 100vh;
+  padding: 40px; /* Adjusted for better spacing */
+  position: relative;
+  font-family: 'Spline Sans Mono';
+}
+
+/* Navbar placeholder for spacing */
+.navbar-placeholder {
+  height: 50px; /* Adjust as necessary */
+}
+.wrapper {
+  width: 404px;
+  height: 146px;
+  box-sizing: border-box;
+  padding: 10px; /* Optional: Adjust padding if needed */
+  /* border: 1px solid #ccc; Optional: Add a border for visibility */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  /* align-items: center; */
 }
 
-.App-link {
-  color: #61dafb;
+/* Header Title */
+.header-title {
+  color: #F5F7F8;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: left;
+  margin-bottom: 5px;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Subtitle */
+.sub-title {
+  color: #B5B7B8;
+  font-size: 14px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+/* Content container for timer and question area */
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  padding-top: 20px;
 }
